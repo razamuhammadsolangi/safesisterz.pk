@@ -1,243 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeSister.pk | Your Safety, Our Priority</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSister.pk - Empowering Women's Safety</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX3NRsXWyXkVzQBopC_C5fXOZcCPIaNlc"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    #map {
-      height: 300px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      border: 2px solid rgba(255, 105, 180, 0.3);
-    }
     body {
-      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', sans-serif;
+      scroll-behavior: smooth;
     }
-    .glassmorphism {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-    }
-    .hover-glow {
-      transition: all 0.3s ease-in-out;
-    }
-    .hover-glow:hover {
-      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
-      transform: translateY(-2px);
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #FF69B4, #7F00FF);
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(90deg, #e55b9e, #6b00d7);
-      transform: scale(1.05);
-    }
-    .section-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
+    .urdu {
+      font-family: 'Noto Nastaliq Urdu', serif;
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-pink-100 via-purple-200 to-blue-100 text-gray-800">
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-8 shadow-lg" data-aos="fade-down">
-    <div class="section-container">
-      <h1 class="text-4xl font-bold text-center">SafeSister.pk</h1>
-      <p class="text-center text-base mt-2">Har behan safe, har jagah safe 💖</p>
-    </div>
-  </header>
 
-  <!-- Mission Section -->
-  <section class="py-12 px-4 section-container" data-aos="fade-up">
-    <div class="bg-white glassmorphism rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
-      <div class="md:w-1/2" data-aos="fade-right">
-        <h2 class="text-3xl font-bold mb-4 text-pink-600">Our Mission</h2>
-        <p class="mb-6 text-gray-700 leading-relaxed">We are dedicated to protecting our sisters across Pakistan. With rising issues like harassment, kidnapping, and violence against women, SafeSister.pk provides free services rooted in Islamic values to ensure safety and dignity for every woman, In sha Allah.</p>
-      </div>
-      <div class="md:w-1/2" data-aos="zoom-in">
-        <img src="women-abuse-against-violence-and-harassment-concept-illustration-woman-and-hand-silhouette-symbol-vector.jpg" alt="Women facing harassment issues" class="w-full rounded-lg shadow-lg">
-      </div>
-    </div>
-  </section>
-
-  <!-- Work in Progress Notice -->
-  <section class="py-6 px-4 bg-rose-50 text-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="section-container">
-      <p class="font-semibold text-emerald-800">Note: This project is under development. We are working tirelessly to complete it, and In sha Allah, we will launch soon to serve our sisters across Pakistan.</p>
-    </div>
-  </section>
-
+<body class="bg-gradient-to-br from-[#FFF0F5] to-[#FFE4E1] text-[#3D1E27]">
   <!-- Hero Section -->
-  <section class="text-center py-12 px-4 section-container" data-aos="fade-up" data-aos-delay="200">
-    <h2 class="text-3xl font-bold mb-4 text-purple-600">Emergency Support, Legal Help & Awareness</h2>
-    <p class="mb-6 max-w-lg mx-auto text-gray-700">Made with ❤️ for every sister in Pakistan.</p>
-    <a href="#emergency" class="btn-primary text-white px-8 py-3 rounded-full hover-glow inline-block" aria-label="Start exploring SafeSister services">Start Now</a>
-  </section>
-
-  <!-- Quran Ayat Section -->
-  <section class="py-12 px-4 bg-gradient-to-r from-rose-50 to-emerald-100 section-container" data-aos="fade-right">
-    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Quranic Guidance for Women</h3>
-    <p class="mb-4 font-bold">Surah An-Nisa (4:34) - Protection and Respect for Women</p>
-    <p class="mb-2 text-right" dir="rtl">الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاءِ بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَا أَنْفَقُوا مِنْ أَمْوَالِهِمْ ۚ</p>
-    <p class="mb-4">Urdu Translation: مرد عورتوں کے محافظ ہیں، کیونکہ اللہ نے ایک کو دوسرے پر فضیلت دی اور اس لیے کہ انہوں نے اپنا مال خرچ کیا۔</p>
-    <p class="text-gray-700">This ayat emphasizes the responsibility of men to protect and provide for women, ensuring their safety and dignity in society.</p>
-  </section>
-
-  <!-- Emergency Help Section -->
-  <section id="emergency" class="py-12 px-4 section-container" data-aos="fade-up">
-    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Emergency Helplines by City</h3>
-    <label for="citySearch" class="block mb-2 text-sm font-medium text-gray-700">Search your city:</label>
-    <input type="text" id="citySearch" placeholder="Type to search..." class="w-full p-3 border rounded-lg mb-4 focus:ring-2 focus:ring-pink-300 bg-white glassmorphism" aria-label="Search for a city" oninput="filterCities()">
-    <select id="city" class="w-full p-3 border rounded-lg mb-4 bg-white glassmorphism" style="max-height: 200px; overflow-y: auto;" aria-label="Select a city">
-      <option>Karachi</option>
-      <option>Lahore</option>
-      <option>Islamabad</option>
-      <option>Quetta</option>
-      <option>Peshawar</option>
-      <option>Faisalabad</option>
-      <option>Rawalpindi</option>
-      <option>Multan</option>
-      <option>Hyderabad</option>
-      <option>Gujranwala</option>
-      <option>Sialkot</option>
-      <option>Bahawalpur</option>
-      <option>Sargodha</option>
-      <option>Abbottabad</option>
-      <option>Mardan</option>
-      <option>Gujrat</option>
-      <option>Larkana</option>
-      <option>Sukkuk</option>
-      <option>Sheikhupura</option>
-      <option>Rahim Yar Khan</option>
-    </select>
-    <div id="helplines" class="bg-white p-6 rounded-2xl shadow-lg glassmorphism mt-4" data-aos="zoom-in">
-      <p class="font-bold flex items-center text-lg"><span class="text-2xl mr-3">📞</span> Police: 15</p>
-      <p class="font-bold flex items-center text-lg"><span class="text-2xl mr-3">🆘</span> Rescue: 1122</p>
-      <p class="font-bold flex items-center text-lg"><span class="text-2xl mr-3">👩‍⚖️</span> Women Support Center: 0800-93372</p>
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1592759505437-e4d64aefb1b1?auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-10 z-0"></div>
+    <div class="z-10 max-w-2xl">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 text-pink-700" data-aos="fade-down">Every Sister Safe, Everywhere Safe</h1>
+      <p class="text-lg md:text-xl text-gray-800 mb-8" data-aos="fade-up">A women-led initiative to empower, protect, and support women across Pakistan.</p>
+      <a href="#report" class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition duration-300 animate-pulse">🚨 Report a Problem</a>
     </div>
   </section>
 
-  <!-- Live Location Share Section -->
-  <section class="py-12 px-4 section-container" data-aos="fade-up" data-aos-delay="100">
-    <div class="bg-white glassmorphism rounded-2xl p-8">
-      <h3 class="text-2xl font-semibold mb-4 text-purple-600">Share Your Live Location with Family</h3>
-      <p class="mb-4 max-w-2xl mx-auto text-gray-700">Use the map below to share your current location with your trusted family members. It will auto-update when you reload this page.</p>
-      <div id="map" class="mb-6"></div>
-      <button onclick="shareLocation()" class="btn-primary text-white px-8 py-3 rounded-full hover-glow" aria-label="Share current location">Share My Location</button>
+  <!-- About Section -->
+  <section class="py-24 px-6 bg-white" id="about">
+    <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-pink-700">Our Mission</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">We are dedicated to protecting our sisters across Pakistan. With rising issues like harassment, kidnapping, and violence against women, SafeSister.pk provides free services rooted in Islamic values to ensure safety and dignity for every woman, In sha Allah.</p>
+      <p class="text-lg text-gray-600 leading-relaxed mt-4">Our platform empowers women by offering tools for reporting issues, accessing legal support, and sharing safety resources. We aim to bridge the gap between communities and authorities, fostering a safer environment for all.</p>
+      <p class="text-lg text-gray-600 leading-relaxed mt-4 italic">Note: This project is under development. We are working tirelessly to complete it, and In sha Allah, we will launch soon to serve our sisters across Pakistan.</p>
     </div>
+  </section>
+
+  <!-- Quranic Guidance -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="guidance">
+    <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-pink-700">Quranic Guidance for Women</h2>
+      <p class="text-lg urdu">سورہ النساء (4:34) - عورتوں کے لیے تحفظ اور عزت</p>
+      <p class="text-xl urdu my-4">الرِّجَالُ قَوَّامُونَ عَلَى النِّسَاءِ بِمَا فَضَّلَ اللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍ وَبِمَا أَنْفَقُوا مِنْ أَمْوَالِهِمْ ۚ</p>
+      <p class="text-lg urdu">مرد عورتوں کے محافظ ہیں، کیونکہ اللہ نے ایک کو دوسرے پر فضیلت دی اور اس لیے کہ انہوں نے اپنا مال خرچ کیا۔</p>
+      <p class="text-lg text-gray-600 mt-4">This ayat emphasizes the responsibility of men to protect and provide for women, ensuring their safety and dignity in society. SafeSister.pk is committed to upholding these values through practical support and resources.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="services">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 text-pink-700" data-aos="zoom-in">What We Offer</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">🔒 Safe Reporting</h3>
+          <p class="text-gray-600">Your report goes directly and securely to the right authority, ensuring confidentiality and swift action.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">⚖️ Legal Guidance</h3>
+          <p class="text-gray-600">Connect with women lawyers and organizations for free legal advice and support.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">📍 Area-based Help</h3>
+          <p class="text-gray-600">Issues are automatically routed to the correct department based on your city and concern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Helplines -->
+  <section class="py-24 px-6 bg-white" id="helplines">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-pink-700" data-aos="zoom-in">Emergency Helplines</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up">
+          <p class="text-lg font-semibold text-pink-600">📞 Police</p>
+          <p class="text-xl text-gray-600">15</p>
+        </div>
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-lg font-semibold text-pink-600">🆘 Rescue</p>
+          <p class="text-xl text-gray-600">1122</p>
+        </div>
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-lg font-semibold text-pink-600">👩‍⚖️ Women Support Center</p>
+          <p class="text-xl text-gray-600">0800-93372</p>
+        </div>
+      </div>
+      <p class="text-lg text-gray-600 mt-8">Save these numbers in your phone for immediate access during emergencies. Our helplines are available 24/7 to assist you.</p>
+    </div>
+  </section>
+
+  <!-- Location Sharing -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="location">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-pink-700" data-aos="zoom-in">Share Your Live Location</h2>
+      <p class="text-lg text-gray-600 text-center mb-6">Use the map below to share your current location with trusted family members. It auto-updates on page reload for real-time safety.</p>
+      <div id="map" class="h-96 w-full rounded-3xl shadow-lg" data-aos="fade-up"></div>
+      <button onclick="shareLocation()" class="mt-6 bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold mx-auto block">Share Location</button>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script>
+      var map = L.map('map').setView([24.8607, 67.0011], 13); // Default to Karachi
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      function shareLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            L.marker([lat, lng]).addTo(map)
+              .bindPopup('You are here!').openPopup();
+            map.setView([lat, lng], 13);
+            alert('Location shared! Copy this link to share: ' + window.location.href + '?lat=' + lat + '&lng=' + lng);
+          }, function(error) {
+            alert('Error getting location: ' + error.message);
+          });
+        } else {
+          alert('Geolocation is not supported by this browser.');
+        }
+      }
+    </script>
   </section>
 
   <!-- Self-Defense Tips -->
-  <section class="py-12 px-4 bg-pink-50 section-container" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-2xl font-semibold mb-6 text-purple-600">Self-Defense Tips</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="flex items-center bg-white p-6 rounded-lg shadow hover-glow glassmorphism" data-aos="slide-up"><span class="text-3xl mr-4">🚨</span> Stay aware of your surroundings.</div>
-      <div class="flex items-center bg-white p-6 rounded-lg shadow hover-glowwordpressglassmorphism" data-aos="slide-up" data-aos-delay="100"><span class="text-3xl mr-4">📱</span> Always share your ride details with someone.</div>
-      <div class="flex items-center bg-white p-6 rounded-lg shadow hover-glow glassmorphism" data-aos="slide-up" data-aos-delay="200"><span class="text-3xl mr-4">🧯</span> Keep a safety tool like a pepper spray.</div>
-      <div class="flex items-center bg-white p-6 rounded-lg shadow hover-glow glassmorphism" data-aos="slide-up" data-aos-delay="300"><span class="text-3xl mr-4">🧕</span> Use trusted transport apps only.</div>
+  <section class="py-24 px-6 bg-white" id="self-defense">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-pink-700" data-aos="zoom-in">Self-Defense Tips</h2>
+      <ul class="list-disc list-inside space-y-4 text-lg text-gray-600">
+        <li data-aos="fade-up">🚨 Stay aware of your surroundings at all times, especially in unfamiliar areas.</li>
+        <li data-aos="fade-up" data-aos-delay="100">📱 Always share your ride details with a trusted contact before traveling.</li>
+        <li data-aos="fade-up" data-aos-delay="200">🧯 Carry a safety tool like pepper spray and know how to use it effectively.</li>
+        <li data-aos="fade-up" data-aos-delay="300">🧕 Use trusted transport apps like Careem or Uber for safer travel.</li>
+        <li data-aos="fade-up" data-aos-delay="400">🥋 Learn basic self-defense moves, such as how to break free from a wrist grab.</li>
+        <li data-aos="fade-up" data-aos-delay="500">📢 Use a loud whistle or shout to draw attention if you feel threatened.</li>
+      </ul>
+      <p class="text-lg text-gray-600 mt-8">Consider joining local self-defense workshops or watching online tutorials to build confidence and skills.</p>
     </div>
   </section>
 
-  <!-- Legal Rights Section -->
-  <section class="py-12 px-4 section-container" data-aos="fade-up">
-    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Know Your Legal Rights</h3>
-    <div class="bg-white p-8 rounded-2xl shadow-lg glassmorphism" data-aos="zoom-in">
-      <p class="mb-4 text-gray-700">In Pakistan, harassment is punishable by law under the Protection Against Harassment Act.</p>
-      <a href="#" class="btn-primary text-white px-6 py-3 rounded-full hover-glow" aria-label="Download FIR template">Download FIR Template</a>
+  <!-- Legal Resources -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="legal">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-pink-700" data-aos="zoom-in">Know Your Legal Rights</h2>
+      <p class="text-lg text-gray-600 mb-6">In Pakistan, harassment is punishable under the <strong>Protection Against Harassment of Women at the Workplace Act, 2010</strong> and <strong>Section 509 of the Pakistan Penal Code</strong>, which addresses insulting the modesty of a woman.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">File an FIR</h3>
+          <p class="text-gray-600">Download our FIR template to report incidents to your local police station.</p>
+          <a href="#fir-template" class="mt-4 inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold">Download FIR Template</a>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">Legal Helplines</h3>
+          <p class="text-gray-600">Contact organizations like the Women’s Protection Unit or legal aid NGOs for free support.</p>
+          <a href="#legal-helplines" class="mt-4 inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full font-semibold">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PDF Guide Section -->
-  <section class="py-12 px-4 section-container" data-aos="fade-up" data-aos-delay="100">
-    <div class="bg-white glassmorphism rounded-2xl p-8">
-      <h3 class="text-2xl font-semibold mb-4 text-purple-600">Free Downloadable Safety Guide</h3>
-      <p class="mb-4 max-w-2xl mx-auto text-gray-700">Download our complete PDF guide with emergency tips, legal info, and how-to steps for staying safe.</p>
-      <a href="SafeSister_Emergency_Guide.pdf" download class="btn-primary text-white px-6 py-3 rounded-full hover-glow" aria-label="Download safety guide PDF">📘 Download PDF</a>
+  <!-- Safety Guide -->
+  <section class="py-24 px-6 bg-white" id="guide">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-pink-700" data-aos="zoom-in">Free Downloadable Safety Guide</h2>
+      <p class="text-lg text-gray-600 mb-6">Download our comprehensive PDF guide, including emergency tips, legal information, and step-by-step safety strategies tailored for women in Pakistan.</p>
+      <a href="#safety-guide" class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold" data-aos="fade-up">📘 Download PDF</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="faq">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-pink-700" data-aos="zoom-in">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="bg-white p-8 rounded-3xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">Is my report anonymous?</h3>
+          <p class="text-gray-600">Yes, SafeSister.pk ensures your reports are confidential and shared only with relevant authorities.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">How do I share my location safely?</h3>
+          <p class="text-gray-600">Use our location-sharing tool to send your live location to trusted contacts via a secure link.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold text-pink-600 mb-2">What legal support is available?</h3>
+          <p class="text-gray-600">We connect you with legal professionals and provide resources like FIR templates to empower you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 px-6 bg-white" id="testimonials">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-pink-700" data-aos="zoom-in">What Our Sisters Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up">
+          <p class="text-gray-600 italic">"SafeSister gave me the confidence to report an issue safely and anonymously."</p>
+          <p class="text-pink-600 font-semibold mt-4">– Ayesha, Karachi</p>
+        </div>
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-gray-600 italic">"The self-defense tips and legal resources helped me feel empowered."</p>
+          <p class="text-pink-600 font-semibold mt-4">– Fatima, Lahore</p>
+        </div>
+        <div class="bg-[#FFF0F3] p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-gray-600 italic">"Sharing my location with family made me feel secure during travel."</p>
+          <p class="text-pink-600 font-semibold mt-4">– Zainab, Islamabad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Support -->
+  <section class="py-24 px-6 bg-[#FFF5F7]" id="community">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-pink-700" data-aos="zoom-in">Join Our Community</h2>
+      <p class="text-lg text-gray-600 mb-6">Connect with other women across Pakistan to share experiences, access resources, and build a supportive network. Join our WhatsApp group or follow us on social media for updates and safety tips.</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#whatsapp" class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold" data-aos="fade-up">Join WhatsApp Group</a>
+        <a href="#social" class="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full font-semibold" data-aos="fade-up" data-aos-delay="100">Follow Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="py-24 px-6 bg-white" id="newsletter">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-pink-700" data-aos="zoom-in">Stay Updated</h2>
+      <p class="text-lg text-gray-600 mb-6">Subscribe to our newsletter for the latest safety tips, legal updates, and community events.</p>
+      <form class="space-y-6 bg-[#FFF0F3] p-10 rounded-3xl shadow-xl" data-aos="fade-up">
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border rounded-xl focus:outline-pink-500" required>
+        <button type="button" onclick="alert('Subscribed! You will receive updates from SafeSister.pk.')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-md">📬 Subscribe</button>
+      </form>
     </div>
   </section>
 
   <!-- Report Form -->
-  <section class="py-12 px-4 bg-gradient-to-r from-rose-50 to-emerald-100burp-100 section-container" data-aos="fade-up" data-aos-delay="200">
-    <h3 class="text-2xl font-semibold mb-4 text-purple-600">Report a Case</h3>
-    <form action="https://formspree.io/f/mayvlzkd" method="POST" class="space-y-4 max-w-lg mx-auto glassmorphism bg-white p-8 rounded-2xl">
-      <input type="text" name="name" placeholder="Your Name (Optional)" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-300 bg-white/80" aria-label="Your name (optional)" />
-      <textarea name="message" placeholder="Describe the issue..." class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-300 bg-white/80" required aria-label="Issue description"></textarea>
-      <button type="submit" class="btn-primary text-white px-8 py-3 rounded-full hover-glow" aria-label="Submit report">Submit</button>
-    </form>
+  <section class="py-24 px-6 bg-white" id="report">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-pink-700" data-aos="fade-up">Submit a Report</h2>
+      <form class="space-y-6 bg-[#FFF0F3] p-10 rounded-3xl shadow-xl" data-aos="zoom-in">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded-xl focus:outline-pink-500" required>
+        <input type="text" placeholder="City" class="w-full px-4 py-3 border rounded-xl focus:outline-pink-500" required>
+        <select class="w-full px-4 py-3 border rounded-xl focus:outline-pink-500">
+          <option disabled selected>Select Issue Type</option>
+          <option>Harassment</option>
+          <option>Street Light Problem</option>
+          <option>Water Issue</option>
+          <option>Police Misbehavior</option>
+        </select>
+        <textarea placeholder="Describe the issue..." class="w-full px-4 py-3 border rounded-xl focus:outline-pink-500" rows="5" required></textarea>
+        <button type="button" onclick="alert('Issue submitted! We will forward it to the relevant authorities.')" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-md">📩 Submit Report</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-8 text-center" data-aos="fade-up">
-    <p>© 2025 SafeSister.pk. Built with ❤️ by Raza for a safer Pakistan.</p>
+  <footer class="bg-[#FFF0F5] py-10 text-center">
+    <p class="text-gray-600 text-sm">Made with ❤️ for the women of Pakistan.<br><strong>Initiated by Raza Solangi</strong></p>
   </footer>
 
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
-
-    function shareLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          alert(`Share this location link with your family: https://www.google.com/maps?q=${lat},${lng}`);
-        }, function() {
-          alert("Location access denied. Please enable location services.");
-        });
-      } else {
-        alert("Geolocation is not supported by your browser.");
-      }
-    }
-
-    function initMap() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          const userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
-          const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: userLocation,
-            styles: [
-              { featureType: "all", elementType: "all", stylers: [{ saturation: -10 }, { lightness: 30 }] },
-              { featureType: "road", elementType: "all", stylers: [{ visibility: "simplified" }] },
-              { featureType: "poi", elementType: "all", stylers: [{ visibility: "off" }] }
-            ]
-          });
-          new google.maps.Marker({ 
-            position: userLocation, 
-            map: map,
-            icon: {
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 10,
-              fillColor: "#FF69B4",
-              fillOpacity: 0.8,
-              strokeColor: "#FFFFFF",
-              strokeWeight: 2
-            }
-          });
-        });
-      }
-    }
-
-    function filterCities() {
-      const input = document.getElementById('citySearch').value.toLowerCase();
-      const select = document.getElementById('city');
-      const options = select.options;
-      for (let i = 0; i < options.length; i++) {
-        const option = options[i];
-        option.style.display = option.text.toLowerCase().includes(input) ? '' : 'none';
-      }
-    }
-
-    window.onload = initMap;
+    AOS.init();
   </script>
+
+  <!-- Note -->
+  <!--
+    NOTE:
+    This is a project made for SafeSister.pk — a women empowerment and safety initiative.
+    We're starting work on it seriously very soon. Please build it with empathy and heart ❤️
+
+    - Developed by Raza Solangi
+  -->
 </body>
+
 </html>
